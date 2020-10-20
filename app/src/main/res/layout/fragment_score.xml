@@ -5,7 +5,15 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	>
 	<data>
-
+		<variable
+			name="homeGoalScorerList"
+			type="java.util.List" />
+		<variable
+			name="awayGoalScorerList"
+			type="java.util.List" />
+		<variable
+			name="fragment"
+			type="id.ac.polinema.skor.fragments.ScoreFragment" />
 	</data>
 
 	<androidx.constraintlayout.widget.ConstraintLayout
@@ -42,6 +50,7 @@
 			android:layout_marginStart="8dp"
 			android:layout_marginEnd="8dp"
 			android:layout_marginBottom="16dp"
+			android:onClick="@{(v) -> fragment.onAddHomeClick(v)}"
 			android:text="Add Score Home"
 			app:layout_constraintBottom_toTopOf="@+id/guideline"
 			app:layout_constraintEnd_toEndOf="parent"
@@ -55,6 +64,7 @@
 			android:layout_marginEnd="8dp"
 			android:layout_marginBottom="16dp"
 			android:text="Add Score Away"
+			android:onClick="@{(v) -> fragment.onAddAwayClick(v)}"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintHorizontal_bias="0.0"
@@ -72,6 +82,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:textSize="64sp"
+			android:text="@{String.valueOf(homeGoalScorerList.size())}"
 			app:layout_constraintBottom_toTopOf="@+id/guideline"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
@@ -82,6 +93,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:textSize="64sp"
+			android:text="@{String.valueOf(awayGoalScorerList.size())}"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
